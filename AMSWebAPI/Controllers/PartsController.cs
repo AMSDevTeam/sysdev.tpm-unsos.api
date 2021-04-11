@@ -20,7 +20,7 @@ namespace AMSWebAPI.Controllers
         // POST: api/Parts       
         [HttpPost]
         [Route(Constant.parts_inventory)]
-        public async Task<object> PostFleet([FromBody]SimpleModel list)
+        public async Task<object> PostPartsInventory([FromBody]SimpleModel list)
         {
             Parts model = Newtonsoft.Json.JsonConvert.DeserializeObject<Parts>(list.Name);
             var response = this.StatusCode((int)(HttpStatusCode.OK), await _service.PartsInventoryUpdateAsync(model));
